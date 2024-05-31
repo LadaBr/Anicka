@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>A JavaScript project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            config = {
+                font: 'Roboto',
+                navigation: {
+                    font: 'Poppins',
+                    colors: {
+                        background: 'red',
+                        link: 'black',
+                        menuIcon: 'black'
+                    }
+                },
+                buttons: {
+                    button1: {
+                        border: {
+                            color: 'green',
+                            radius: '16px',
+                            width: '1px',
+                        },
+                        hover: {
+                            color: 'red',
+                            background: 'orange',
+                            borderColor: 'orange'
+                        },
+                        background: 'red',
+                        color: 'orange'
+                    },
+                    button2: {
+                        border: {
+                            color: 'blue',
+                            radius: '16px',
+                            width: '1px',
+                        },
+                        hover: {
+                            color: 'yellow',
+                            background: 'green',
+                            borderColor: 'green'
+                        },
+                        background: 'yellow',
+                        color: 'green'
+                    },
+                },
+                form: {
+                    button: {
+                        border: {
+                            color: 'blue',
+                            radius: '16px',
+                            width: '1px',
+                        },
+                        hover: {
+                            color: 'yellow',
+                            background: 'green',
+                            borderColor: 'green'
+                        },
+                        background: 'yellow',
+                        color: 'green'
+                    },
+                },
+                card: {
+                    shadow: true,
+                    hover: true,
+                    styles: {
+                        button: {
+                            color: 'red',
+                            hover: {
+                                color: 'orange',
+                            }
+                        }
+                    }
+                },
+                h1: {
+                    color: 'red'
+                }
+            };
+        </script>
+        <script src="anicka.js"></script>
+<!--        <script src="https://kit.fontawesome.com/2eafeb8c40.js" crossorigin="anonymous"></script>-->
+    </head>
+    <body style="margin: 0;">
+    <div class="full-width" style="display: flex; justify-content: center; max-width: 1200px; width: 100%;">
+
+<!--        <app-banner height="600px" left overlay-color="rgba(240,100,0,0.5)">-->
+<!--            <img src="https://picsum.photos/2000/650">-->
+<!--            <app-stripe left shadow color="whitesmoke"></app-stripe>-->
+<!--            <h1 class="nadpis" style="font-size: 72px;color: #4d6ed3;">Alpina</h1>-->
+<!--            <div style="font-size: 22px;color: #0691b6;" >Cesta do srdce rakouských Alp.</div>-->
+<!--        </app-banner>-->
+
+        <app-banner height="600px" left>
+            <app-carousel controls>
+                <img src="https://picsum.photos/500/550">
+                <img src="https://picsum.photos/600/450">
+                <img src="https://picsum.photos/700/650">
+            </app-carousel>
+            <h1 class="nadpis" style="font-size: 72px;color: #4d6ed3;">Alpina</h1>
+            <div style="font-size: 22px;color: #0691b6;" >Cesta do srdce rakouských Alp.</div>
+
+            <app-animated-text>Sklenářské služby</app-animated-text>
+            <app-animated-text>Sklenářské služby 2</app-animated-text>
+            <app-animated-text>Sklenářské služby 3</app-animated-text>
+        </app-banner>
+
+
+
+<!--        <div>-->
+<!--            <app-card width="400px">-->
+<!--                <img src="https://picsum.photos/2000/650">-->
+<!--                <h1>Card title</h1>-->
+<!--                <span slot="overlay">Overlay title</span>-->
+<!--                <p slot="overlay">Overlay text</p>-->
+<!--            </app-card>-->
+<!--            <app-card width="400px" >-->
+<!--                <img src="https://picsum.photos/2000/650">-->
+<!--                <h1>Card title</h1>-->
+<!--                <span slot="overlay">Overlay title</span>-->
+<!--                <p slot="overlay">Overlay text</p>-->
+<!--            </app-card>-->
+
+<!--        </div>-->
+<!--        <app-notification shadow background="transparent">-->
+<!--            <h1 slot="title">Title</h1>-->
+<!--            <p>Tohle je popis</p>-->
+<!--        </app-notification>-->
+    </div>
+    <footer style="background: rgba(107,161,146,0.42); width:100%; height: 400px;"></footer>
+    </body>
+</html>

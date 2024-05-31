@@ -1,0 +1,16 @@
+{
+  "name": "anicka",
+  "module": "src/anicka.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "esbuild": "^0.20.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node serve.mjs"
+  }
+}

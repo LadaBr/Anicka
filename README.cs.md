@@ -1,6 +1,6 @@
 # anicka
 
-# Components
+# Komponenty
 - [Banner](#banner)
 - [Stripe](#stripe)
 - [Notification](#notification)
@@ -8,92 +8,92 @@
 - [Animated text](#animated-text)
 - [Carousel](#carousel)
 
-# Configuration
+# Konfigurace
 ```html
-<!-- Config must be placed before library script -->
+<!-- Konfigurace musí být umístěna před skriptem knihovny -->
 <script>
   config = {
-     ...
+    ...
   }
 </script>
-<script src="<path to source of this library>"></script>
+<script src="<cesta ke zdroji této knihovny>"></script>
 ```
 
-## Parameters
-- **font** - sets font family for entire website
+## Parametry
+- **font** - nastavuje rodinu písem pro celý web
 - **navigation**
-  - **colors** - colors of navigation elements
-    - **background** - background color
-    - **menuIcon** - menu toggle icon color (hamburger)
-    - **link** - color of links inside navigation
-  - **font** - sets font family for navigation
-  - **noBorder** _( true | false )_ - removes navigation border
-  - **fullWidth** _( true | false )_ - sets navigation width to width of viewport
-  - **sticky** _( true | false )_ - attaches navigation to window while scrolled down
-- **buttons** - there are two button styles
-  - **button1** - button 1 styles
+  - **colors** - barvy navigačních prvků
+    - **background** - barva pozadí
+    - **menuIcon** - barva ikony menu (hamburger)
+    - **link** - barva odkazů v navigaci
+  - **font** - nastavuje rodinu písem pro navigaci
+  - **noBorder** _( true | false )_ - odstraňuje okraj navigace
+  - **fullWidth** _( true | false )_ - nastavuje šířku navigace na šířku okna prohlížeče
+  - **sticky** _( true | false )_ - připevňuje navigaci k oknu při rolování
+- **buttons** - existují dva styly tlačítek
+  - **button1** - styly tlačítka 1
     - **border**
       - **color**
       - **radius**
       - **width**
-    - **color** - button text color
-    - **background** - button background color
-    - **hover** - styles while hovering
+    - **color** - barva textu tlačítka
+    - **background** - barva pozadí tlačítka
+    - **hover** - styly při přejetí myší
       - **color**
       - **background**
       - **borderColor**
-      - **down** _( true | false )_ - animated button down effect
-      - **right** _( true | false )_ - animated button right effect
-  - **button2</b> - same as **button1**
-- **link** - global styles for link \<a\>
+      - **down** _( true | false )_ - animovaný efekt stisknutí tlačítka
+      - **right** _( true | false )_ - animovaný efekt pohybu doprava
+  - **button2** - stejné jako **button1**
+- **link** - globální styly pro odkazy \<a\>
   - **color**
-  - **decoration** ( none | underline | ... ) - style for text-decoration
+  - **decoration** ( none | underline | ... ) - styl pro text-decoration
 - **footer**
-  - **bgColor** - footer background color
-  - **color** - footer text color
+  - **bgColor** - barva pozadí patičky
+  - **color** - barva textu patičky
 - **contactPagelet**
-  - **color** - contact pagelet text color (.contact-pagelet-row i)
-- **form** - form styles
-  - **button** - submit button styles (same as **buttons** styles)
-  - **inputs** - form inputs styles (same as **buttons** styles)
-  - **label** - form input label styles
+  - **color** - barva textu kontaktního modulu (.contact-pagelet-row i)
+- **form** - styly formulářů
+  - **button** - styly tlačítka odeslání (stejné jako styly **buttons**)
+  - **inputs** - styly vstupních polí formuláře (stejné jako styly **buttons**)
+  - **label** - styly štítků vstupních polí
     - **color**
     - **fontSize**
-  - **soften** - makes form compact with smaller gaps and padding
-  - **gdpr** - color of GDPR anchor text
-- **card** - global config for all cards
-  - **shadow** _( true | false )_ - adds shadow to each card
-  - **hover** _( true | false )_ - adds hover effect (animated resize of box-shadow)
-  - **styles** - card styles
-    - **header** - card header styles
-      - **background** - background color
-      - **color** - text color
-    - **button** - card header styles
-      - **background** - background color
-      - **color** - text color
-      - **border** - border color
-      - **hover** - hover styles
-        - **background** - hover background color
-        - **color** - hover text color
-  - **sameHeight** - array of number of columns that should have same height
-- **cards** - config for cards of specific class
-  - "\<class1\>" - same as **card** config
-  - "\<class2\>" - same as **card** config
+  - **soften** - zmenšuje mezery a odsazení ve formuláři
+  - **gdpr** - barva textu GDPR odkazu
+- **card** - globální konfigurace pro všechny karty
+  - **shadow** _( true | false )_ - přidává stín ke každé kartě
+  - **hover** _( true | false )_ - přidává efekt při přejetí myší (animované změny stínu)
+  - **styles** - styly karet
+    - **header** - styly záhlaví karet
+      - **background** - barva pozadí
+      - **color** - barva textu
+    - **button** - styly tlačítka záhlaví karet
+      - **background** - barva pozadí
+      - **color** - barva textu
+      - **border** - barva okraje
+      - **hover** - styly při přejetí myší
+        - **background** - barva pozadí při přejetí myší
+        - **color** - barva textu při přejetí myší
+  - **sameHeight** - pole počtu sloupců, které by měly mít stejnou výšku
+- **cards** - konfigurace pro karty specifické třídy
+  - "\<class1\>" - stejné jako konfigurace **card**
+  - "\<class2\>" - stejné jako konfigurace **card**
   - ....
-- **li** - list item config
-  - **content** - list item character
-  - **color** - list item color
-- **zoomImage** _([".section1", ".section2"])_ - array of section class names or other selectors for zoom animation of .section-background
-- **gallery** - gallery config
-  - **noGap** _( true | false )_ - removes padding between gallery items
-- **h1** - header text styles
+- **li** - konfigurace položek seznamu
+  - **content** - znak položky seznamu
+  - **color** - barva položky seznamu
+- **zoomImage** _([".section1", ".section2"])_ - pole názvů tříd sekcí nebo jiných selektorů pro animaci zvětšení pozadí sekce
+- **gallery** - konfigurace galerie
+  - **noGap** _( true | false )_ - odstraňuje mezery mezi položkami galerie
+- **h1** - styly textu nadpisu
   - **color**
-  - **fontSize** _(e.g. 12px)_ - default size (mobile)
-  - **fontSizeTablet** _(e.g. 16px)_
-  - **fontSizeDesktop** _(e.g. 24px)_
+  - **fontSize** _(např. 12px)_ - výchozí velikost (mobil)
+  - **fontSizeTablet** _(např. 16px)_
+  - **fontSizeDesktop** _(např. 24px)_
 
 
-## Example
+## Příklad
 ```html
 <script>
   config = {
@@ -173,7 +173,7 @@
   };
 </script>
 ```
-## Schema
+## Schéma
 ```ts
 interface Config {
     font?: string;
@@ -305,7 +305,9 @@ interface Config {
             button?: {
               background?: string;
               color?: string;
-              border?: string;
+              border?: string
+
+;
               hover?: {
                 background?: string;
                 color?: string;
@@ -347,30 +349,30 @@ interface Config {
 <a id="banner"></a>
 ## Banner
 
-### Selector
+### Selektor
 ```html
 <app-banner></app-banner>
 ```
 
-### Attributes
-- **top, middle, bottom** <i>(optional)</i>
-  - sets vertical position of content above image
-- **left, center, right** <i>(optional)</i>
-  - sets horizontal position of content above image
-- **height** <i>(optional)</i>
-  - sets height of whole banner
-  - any valid CSS height value
-- **overlay-color** <i>(optional)</i>
-  - sets color of overlay layer above banner image
-  - any valid CSS color value
-### Usage
+### Atributy
+- **top, middle, bottom** <i>(nepovinné)</i>
+  - nastavuje vertikální polohu obsahu nad obrázkem
+- **left, center, right** <i>(nepovinné)</i>
+  - nastavuje horizontální polohu obsahu nad obrázkem
+- **height** <i>(nepovinné)</i>
+  - nastavuje výšku celého banneru
+  - jakákoli platná CSS hodnota výšky
+- **overlay-color** <i>(nepovinné)</i>
+  - nastavuje barvu překryvné vrstvy nad obrázkem banneru
+  - jakákoli platná CSS hodnota barvy
+### Použití
 ```html
 <app-banner
         [top|middle|bottom]
         [left|center|right]
         [height]="<css size value>"
         [overlay-color]="string">
-  <!-- Valid content elements: -->
+  <!-- Platné prvky obsahu: -->
   <p></p>
   <h1></h1>
   <h2></h2>
@@ -378,12 +380,12 @@ interface Config {
   <div></div>
   <app-animated-text></app-animated-text>
 
-  <!-- Valid image elements:-->
+  <!-- Platné prvky obrázku:-->
   <img/>
   <app-carousel></app-carousel>
 </app-banner>
 ```
-### Examples
+### Příklady
 ```html
 <app-banner height="600px" left>
   <app-carousel controls>
@@ -406,33 +408,33 @@ interface Config {
 <a id="stripe"></a>
 ## Stripe
 
-### Selector
+### Selektor
 ```html
 <app-stripe></app-stripe>
 ```
 
-### Attributes
-- **width** <i>(optional)</i> (default 768px)
-  - sets width of whole banner
-  - any valid CSS width value
-- **height** <i>(optional)</i> (default 100%)
-  - sets height of whole banner
-  - any valid CSS height value
-- **triangle** <i>(optional)</i>
-  - sets both **width** and **height** as same value
-  - any valid CSS color value
-- **color** <i>(optional)</i>
-  - sets background color
-- **top, bottom** <i>(optional)</i>
-  - sets vertical position of the stripe
-- **left, right** <i>(optional)</i>
-  - sets horizontal position of the stripe
-- **angle** <i>(optional)</i>
-  - sets angle of stripe and defines its shape based on direction/position
-- **shadow** <i>(optional)</i>
-  - adds shadow to entire element
+### Atributy
+- **width** <i>(nepovinné)</i> (výchozí 768px)
+  - nastavuje šířku celého banneru
+  - jakákoli platná CSS hodnota šířky
+- **height** <i>(nepovinné)</i> (výchozí 100%)
+  - nastavuje výšku celého banneru
+  - jakákoli platná CSS hodnota výšky
+- **triangle** <i>(nepovinné)</i>
+  - nastavuje jak **width**, tak **height** na stejnou hodnotu
+  - jakákoli platná CSS hodnota barvy
+- **color** <i>(nepovinné)</i>
+  - nastavuje barvu pozadí
+- **top, bottom** <i>(nepovinné)</i>
+  - nastavuje vertikální polohu pruhu
+- **left, right** <i>(nepovinné)</i>
+  - nastavuje horizontální polohu pruhu
+- **angle** <i>(nepovinné)</i>
+  - nastavuje úhel pruhu a definuje jeho tvar na základě směru/polohy
+- **shadow** <i>(nepovinné)</i>
+  - přidává stín k celému prvku
 
-### Usage
+### Použití
 ```html
 <app-stripe
         [top|bottom]
@@ -443,10 +445,10 @@ interface Config {
         [height]="<css size value>"
         [triangle]="<css size value>"
         [color]="<css color value>">
-  <!-- Any content here -->
+  <!-- Jakýkoli obsah zde -->
 </app-stripe>
 ```
-### Examples
+### Příklady
 ```html
 <app-stripe left bottom shadow angle="80" triangle="40px" color="whitesmoke">
   Content
@@ -458,26 +460,26 @@ interface Config {
 <a id="notification"></a>
 ## Notification
 
-### Selector
+### Selektor
 ```html
 <app-notification></app-notification>
 ```
 
-### Attributes
-- **background** <i>(optional)</i>
-  - sets background color
-- **radius** <i>(optional)</i>
-  - sets border radius
-- **left, right** <i>(optional)</i>
-  - sets horizontal position
-- **shadow** <i>(optional)</i>
-  - adds shadow to entire element
+### Atributy
+- **background** <i>(nepovinné)</i>
+  - nastavuje barvu pozadí
+- **radius** <i>(nepovinné)</i>
+  - nastavuje poloměr okraje
+- **left, right** <i>(nepovinné)</i>
+  - nastavuje horizontální polohu
+- **shadow** <i>(nepovinné)</i>
+  - přidává stín k celému prvku
 
-### Slots
-- **title** - shows content as title
-- **close** (optional) - replaces default close button
+### Sloty
+- **title** - zobrazuje obsah jako nadpis
+- **close** (nepovinné) - nahrazuje výchozí tlačítko zavření
 
-### Usage
+### Použití
 ```html
 <app-notification
         [left|right]
@@ -485,18 +487,18 @@ interface Config {
         [angle]="number"
         [background]="<css color value>"
         [radius]="<css border-radius value>">
-  <!--Valid content slots:-->
+  <!--Platné sloty obsahu:-->
   <h1 slot="title">Title content</h1>
   <button slot="close">Close button</button>
 
-  <!--Accepts any content:-->
+  <!--Přijímá jakýkoli obsah:-->
   <p>Content</p>
   <div>Content</div>
   Text
   ...
 </app-notification>
 ```
-### Examples
+### Příklady
 ```html
 <app-notification shadow background="transparent">
     <h1 slot="title">This is title</h1>
@@ -507,42 +509,41 @@ interface Config {
 <a id="card"></a>
 ## Card
 
-### Selector
+### Selektor
 ```html
 <app-card></app-card>
 ```
 
-### Attributes
-- **width** <i>(optional)</i> (default 100%)
-  - sets width of whole banner
-  - any valid CSS width value
-- **overlay-color** <i>(optional)</i>
-  - sets hover block overlay color
+### Atributy
+- **width** <i>(nepovinné)</i> (výchozí 100%)
+  - nastavuje šířku celého banneru
+  - jakákoli platná CSS hodnota šířky
+- **overlay-color** <i>(nepovinné)</i>
+  - nastavuje barvu překryvné vrstvy při přejetí myší
 
-### Slots
-- **overlay** - shows content inside overlay
+### Sloty
+- **overlay** - zobrazuje obsah uvnitř překryvu
 
-
-### Usage
+### Použití
 ```html
 <app-card 
         [width]="<css size value>"
         [overlay-color]="<css color value>">
   
-    <!--Valid content slots:-->
+    <!--Platné sloty obsahu:-->
     <element slot="overlay">Overlay title</element>
   
-    <!--Accepts any content:-->
+    <!--Přijímá jakýkoli obsah:-->
     <p>Content</p>
     <div>Content</div>
     Text
     ...
   
-    <!-- Valid image elements shown in background:-->
+    <!-- Platné prvky obrázku zobrazené na pozadí:-->
     <img/>
 </app-card>
 ```
-### Examples
+### Příklady
 ```html
 <app-card width="400px">
   <img src="https://picsum.photos/2000/650">
@@ -555,29 +556,31 @@ interface Config {
 <a id="animated-text"></a>
 ## Animated text
 
-### Selector
+### Selektor
 ```html
 <app-animated-text></app-animated-text>
 ```
 
-### Attributes
-- **delay** <i>(optional)</i> (default **0s**)
-  - delays animation start
-- **right** <i>(optional)</i>
-  - animation starts from right side
+### Atributy
+- **delay** <i>(nepovinné)</i> (výchozí **0s**)
+  - zpožďuje začátek animace
+- **right** <i>(nepovinné)</i>
+  - animace začíná z pravé strany
 
-### Usage
+### Použití
 ```html
 <app-animated-text
         [right]
         [delay]="<css duration value>">
-  <!--Accepts any content-->
+  <!--Přijímá jakýkoli obsah-->
 </app-animated-text>
 ```
-### Examples
+### Příklady
 ```html
 <app-animated-text>Services 1</app-animated-text>
 <app-animated-text>Services 2</app-animated-text>
+
+
 <app-animated-text>Services 3</app-animated-text>
 
 <app-animated-text delay="5s">Services</app-animated-text>
@@ -593,29 +596,28 @@ interface Config {
 </app-animated-text>
 ```
 
-
 <a id="carousel"></a>
 ## Carousel
 
-### Selector
+### Selektor
 ```html
 <app-carousel></app-carousel>
 ```
 
-### Attributes
-- **interval** <i>(optional)</i> (default **5000**)
-  - delays animation start
-- **controls** <i>(optional)</i>
-  - adds slide control arrows and indicators
+### Atributy
+- **interval** <i>(nepovinné)</i> (výchozí **5000**)
+  - zpožďuje začátek animace
+- **controls** <i>(nepovinné)</i>
+  - přidává šipky a ukazatele pro ovládání posuvníku
 
-### Usage
+### Použití
 ```html
 <app-carousel [controls] [interval]="<time in ms>">
-  <!-- Valid content elements: -->
+  <!-- Platné prvky obsahu: -->
   <img/>
 </app-carousel>
 ```
-### Examples
+### Příklady
 ```html
 <app-carousel>
   <img src="https://picsum.photos/500/550">

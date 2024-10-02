@@ -43,7 +43,7 @@ import {HostBinding} from "../core/host-binding.decorator";
         }
     `,
     shadow: true,
-    selector: 'app-animated-text'
+    selector: 'app-flying-text'
 })
 export class AnimatedText extends HTMLElement {
     @HostBinding('style.--animate-delay') @Input() delay: string = '';

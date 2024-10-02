@@ -26,6 +26,8 @@
     - **background** - background color
     - **menuIcon** - menu toggle icon color (hamburger)
     - **link** - color of links inside navigation
+    - **linkHover** - color of hovered links inside navigation
+    - **linkCurrent** - color of current link inside navigation
   - **font** - sets font family for navigation
   - **noBorder** _( true | false )_ - removes navigation border
   - **fullWidth** _( true | false )_ - sets navigation width to width of viewport
@@ -63,6 +65,7 @@
   - **gdpr** - color of GDPR anchor text
 - **card** - global config for all cards
   - **shadow** _( true | false )_ - adds shadow to each card
+  - **radius** - adds card border radius
   - **hover** _( true | false )_ - adds hover effect (animated resize of box-shadow)
   - **styles** - card styles
     - **header** - card header styles
@@ -72,6 +75,7 @@
       - **background** - background color
       - **color** - text color
       - **border** - border color
+      - **radius** - adds card button border radius
       - **hover** - hover styles
         - **background** - hover background color
         - **color** - hover text color
@@ -394,9 +398,9 @@ interface Config {
   <h1 class="nadpis">Alpina</h1>
   <div>Cesta do srdce rakouských Alp.</div>
 
-  <app-animated-text>Sklenářské služby</app-animated-text>
-  <app-animated-text>Sklenářské služby 2</app-animated-text>
-  <app-animated-text>Sklenářské služby 3</app-animated-text>
+  <app-flying-text>Sklenářské služby</app-flying-text>
+  <app-flying-text>Sklenářské služby 2</app-flying-text>
+  <app-flying-text>Sklenářské služby 3</app-flying-text>
 </app-banner>
 
 <app-banner height="auto" overlay-color="rgba(0,0,0,0.5)"></app-banner>
@@ -557,7 +561,7 @@ interface Config {
 
 ### Selector
 ```html
-<app-animated-text></app-animated-text>
+<app-flying-text></app-flying-text>
 ```
 
 ### Attributes
@@ -568,29 +572,29 @@ interface Config {
 
 ### Usage
 ```html
-<app-animated-text
+<app-flying-text
         [right]
         [delay]="<css duration value>">
   <!--Accepts any content-->
-</app-animated-text>
+</app-flying-text>
 ```
 ### Examples
 ```html
-<app-animated-text>Services 1</app-animated-text>
-<app-animated-text>Services 2</app-animated-text>
-<app-animated-text>Services 3</app-animated-text>
+<app-flying-text>Services 1</app-flying-text>
+<app-flying-text>Services 2</app-flying-text>
+<app-flying-text>Services 3</app-flying-text>
 
-<app-animated-text delay="5s">Services</app-animated-text>
+<app-flying-text delay="5s">Services</app-flying-text>
 
-<app-animated-text delay="200ms">
+<app-flying-text delay="200ms">
   <p>Services 2</p>
-</app-animated-text>
+</app-flying-text>
 
-<app-animated-text right>
+<app-flying-text right>
   <div>
     <h3>Services 3</h3>
   </div>
-</app-animated-text>
+</app-flying-text>
 ```
 
 

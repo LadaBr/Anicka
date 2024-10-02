@@ -5,8 +5,7 @@ export const FULL_WIDTH_SECTION = (selector: string = '.full-width') => `
     
     ${selector}-no-padding .content-width-container, ${selector}-no-padding  {
         max-width: unset !important;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+        padding: 0 !important;
     }
     
     ${selector} .content-width-container > section > .pagelet-wrapper { 

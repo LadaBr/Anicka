@@ -10,7 +10,7 @@ import {faInclude} from "../core/fa-include";
         <div class="overlay">
             <div class="left">
                 <button class="arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left"></i>
                 </button>
             </div>
             <div class="middle">
@@ -18,7 +18,7 @@ import {faInclude} from "../core/fa-include";
             </div>
             <div class="right">
                 <button class="arrow">
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
         </div>

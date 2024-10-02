@@ -154,8 +154,7 @@
     
     ${t}-no-padding .content-width-container, ${t}-no-padding  {
         max-width: unset !important;
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+        padding: 0 !important;
     }
     
     ${t} .content-width-container > section > .pagelet-wrapper { 
@@ -597,7 +596,7 @@
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-shims.min.css");
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-font-face.min.css");
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-font-face.min.css");
-`;var $=t=>{let e=document.head.querySelector('[href*="css/all.min.css"]');if(e)t.appendChild(e.cloneNode());else{let r=document.createElement("style");r.textContent=it,t.appendChild(r)}};var v=class extends HTMLElement{constructor(){super(...arguments);this.background="";this.radius=""}componentDidMount(){this.shadowRoot&&$(this.shadowRoot);let r=this.shadowRoot?.querySelector(".hide");r&&(r.onclick=()=>{this.style.display="none"})}};l([h("style.--notification-bg-color"),m()],v.prototype,"background",2),l([h("style.--notification-border-radius"),m()],v.prototype,"radius",2),v=l([f({template:`
+`;var $=t=>{let e=document.head.querySelector('[href*="css/all.min.css"]');if(e)t.prepend(e.cloneNode());else{let r=document.createElement("style");r.textContent=it,t.prepend(r)}};var v=class extends HTMLElement{constructor(){super(...arguments);this.background="";this.radius=""}componentDidMount(){this.shadowRoot&&$(this.shadowRoot);let r=this.shadowRoot?.querySelector(".hide");r&&(r.onclick=()=>{this.style.display="none"})}};l([h("style.--notification-bg-color"),m()],v.prototype,"background",2),l([h("style.--notification-border-radius"),m()],v.prototype,"radius",2),v=l([f({template:`
         <div class="title">
             <slot name="title"></slot>
         </div>
@@ -605,7 +604,7 @@
             <slot></slot>
         </div>
         <button class="hide" onclick="this.style.display = 'none'">
-            <slot name="close"><i class="fa-solid fa-xmark"></i></slot>
+            <slot name="close"><i class="fas fa-xmark"></i></slot>
         </button>
     `,shadow:!0,selector:"app-notification",style:`
         :host {
@@ -734,7 +733,7 @@
         <div class="overlay">
             <div class="left">
                 <button class="arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
+                    <i class="fas fa-chevron-left"></i>
                 </button>
             </div>
             <div class="middle">
@@ -742,7 +741,7 @@
             </div>
             <div class="right">
                 <button class="arrow">
-                    <i class="fa-solid fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
         </div>

@@ -12,7 +12,7 @@ import {faInclude} from "../core/fa-include";
             <slot></slot>
         </div>
         <button class="hide" onclick="this.style.display = 'none'">
-            <slot name="close"><i class="fa-solid fa-xmark"></i></slot>
+            <slot name="close"><i class="fas fa-xmark"></i></slot>
         </button>
     `,
     shadow: true,

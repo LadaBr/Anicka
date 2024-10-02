@@ -29,9 +29,17 @@ export const HostBinding = (binding: string) => (target: any, propertyKey: strin
             const originalConnectedCallback = target.connectedCallback || function() {};
             target.connectedCallback = function() {
                 originalConnectedCallback.call(this);
-                this.style.setProperty(prop, value);
-                newDescriptor.set = function (this: HTMLElement, newValue: any) {
+                if (value !== undefined && value !== null && value !== '') {
                     this.style.setProperty(prop, value);
+                } else {
+                    this.style.removeProperty(prop);
+                }
+                newDescriptor.set = function (this: HTMLElement, newValue: any) {
+                    if (value !== undefined && value !== null && value !== '') {
+                        this.style.setProperty(prop, value);
+                    } else {
+                        this.style.removeProperty(prop);
+                    }
                     newDescriptorRefSet(newValue);
                 };
             };

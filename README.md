@@ -398,9 +398,9 @@ interface Config {
   <h1 class="nadpis">Alpina</h1>
   <div>Cesta do srdce rakouských Alp.</div>
 
-  <app-fly-text>Sklenářské služby</app-fly-text>
-  <app-fly-text>Sklenářské služby 2</app-fly-text>
-  <app-fly-text>Sklenářské služby 3</app-fly-text>
+  <app-animated-text>Sklenářské služby</app-animated-text>
+  <app-animated-text>Sklenářské služby 2</app-animated-text>
+  <app-animated-text>Sklenářské služby 3</app-animated-text>
 </app-banner>
 
 <app-banner height="auto" overlay-color="rgba(0,0,0,0.5)"></app-banner>
@@ -561,7 +561,7 @@ interface Config {
 
 ### Selector
 ```html
-<app-fly-text></app-fly-text>
+<app-animated-text></app-animated-text>
 ```
 
 ### Attributes
@@ -572,29 +572,29 @@ interface Config {
 
 ### Usage
 ```html
-<app-fly-text
+<app-animated-text
         [right]
         [delay]="<css duration value>">
   <!--Accepts any content-->
-</app-fly-text>
+</app-animated-text>
 ```
 ### Examples
 ```html
-<app-fly-text>Services 1</app-fly-text>
-<app-fly-text>Services 2</app-fly-text>
-<app-fly-text>Services 3</app-fly-text>
+<app-animated-text>Services 1</app-animated-text>
+<app-animated-text>Services 2</app-animated-text>
+<app-animated-text>Services 3</app-animated-text>
 
-<app-fly-text delay="5s">Services</app-fly-text>
+<app-animated-text delay="5s">Services</app-animated-text>
 
-<app-fly-text delay="200ms">
+<app-animated-text delay="200ms">
   <p>Services 2</p>
-</app-fly-text>
+</app-animated-text>
 
-<app-fly-text right>
+<app-animated-text right>
   <div>
     <h3>Services 3</h3>
   </div>
-</app-fly-text>
+</app-animated-text>
 ```
 
 

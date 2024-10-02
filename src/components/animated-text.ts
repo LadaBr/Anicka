@@ -43,10 +43,17 @@ import {HostBinding} from "../core/host-binding.decorator";
         }
     `,
     shadow: true,
-    selector: 'app-fly-text'
+    selector: 'app-animated-text'
 })
 export class AnimatedText extends HTMLElement {
-    @HostBinding('style.--animate-delay') @Input() delay: string = '';
+
+    @Input() set delay(delay: number | string) {
+        this.delayNum = Number(delay);
+        this.delayStyle = `${this.delayNum}s`;
+    };
+
+    protected delayNum?: number;
+    @HostBinding('style.--animate-delay') protected delayStyle: string = '';
 
     constructor() {
         super();
@@ -56,7 +63,13 @@ export class AnimatedText extends HTMLElement {
         if (this.parentElement) {
             const siblings = [...this.parentElement.querySelectorAll('app-animated-text')];
             const currentIndex = siblings.indexOf(this);
-            this.style.setProperty('--animate-delay', `${currentIndex}s`);
+            if (currentIndex === 0) return;
+            const previousSibling = siblings[currentIndex - 1];
+            const previousSiblingDelayAttr = previousSibling.getAttribute('delay');
+            const previousDelay = previousSiblingDelayAttr ? Number(previousSiblingDelayAttr) : 0;
+            const delay = previousDelay + (this.delayNum === undefined ? 1 : this.delayNum);
+            this.setAttribute('delay', delay.toString());
+            this.style.setProperty('--animate-delay', `${delay}s`);
         }
     }
 }

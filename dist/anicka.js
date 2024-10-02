@@ -1,4 +1,4 @@
-"use strict";(()=>{var it=Object.defineProperty;var at=Object.getOwnPropertyDescriptor;var l=(t,e,r,o)=>{for(var s=o>1?void 0:o?at(e,r):e,i=t.length-1,c;i>=0;i--)(c=t[i])&&(s=(o?c(e,r,s):c(s))||s);return o&&s&&it(e,r,s),s};var _=`
+"use strict";(()=>{var at=Object.defineProperty;var st=Object.getOwnPropertyDescriptor;var l=(t,e,r,o)=>{for(var s=o>1?void 0:o?st(e,r):e,i=t.length-1,c;i>=0;i--)(c=t[i])&&(s=(o?c(e,r,s):c(s))||s);return o&&s&&at(e,r,s),s};var _=`
     form input[type="submit"] {
         border-style: solid;
         border-width: var(--button-3-border-width, 1px);
@@ -61,10 +61,14 @@
         padding: 8px 0px;
         margin-top:24px;
     }
-`;var R=(t="",e)=>{let r=[];return e?.header?.background&&r.push(`--card-header-bg-color: ${e?.header?.background}`),e?.header?.color&&r.push(`--card-header-color: ${e?.header?.color}`),e?.button?.background&&r.push(`--card-button-bg-color: ${e?.button?.background}`),e?.button?.border&&r.push(`--card-button-border-color: ${e?.button?.border}`),e?.button?.color&&r.push(`--card-button-color: ${e?.button?.color}`),e?.button?.hover?.background&&r.push(`--card-button-hover-bg-color: ${e?.button?.hover?.background}`),e?.button?.hover?.color&&r.push(`--card-button-hover-color: ${e?.button?.hover?.color}`),`
+`;var R=(t="",e)=>{let r=[];return e?.header?.background&&r.push(`--card-header-bg-color: ${e?.header?.background};`),e?.radius&&r.push(`--card-border-radius: ${e?.radius};`),e?.header?.color&&r.push(`--card-header-color: ${e?.header?.color};`),e?.button?.background&&r.push(`--card-button-bg-color: ${e?.button?.background};`),e?.button?.border&&r.push(`--card-button-border-color: ${e?.button?.border};`),e?.button?.color&&r.push(`--card-button-color: ${e?.button?.color};`),e?.button?.radius&&r.push(`--card-button-radius: ${e?.button?.radius};`),e?.button?.hover?.background&&r.push(`--card-button-hover-bg-color: ${e?.button?.hover?.background};`),e?.button?.hover?.color&&r.push(`--card-button-hover-color: ${e?.button?.hover?.color};`),`
         ${t||":root"} {
             ${r.join(`
 `)}
+        }
+        
+        ${t} .card {
+            border-radius: var(--card-border-radius);
         }
         
         ${t} .card .card-header {
@@ -76,13 +80,14 @@
             background-color: var(--card-button-bg-color);
             border-color: var(--card-button-border-color);
             color: var(--card-button-color);
+            border-radius: var(--card-border-radius);
         }
         
         ${t} .card .btn.btn-primary:hover {
             background-color: var(--card-button-hover-bg-color);
             color: var(--card-button-hover-color);
         }
-    `},B=(t="")=>`${t} .card { box-shadow: 5px 5px 18px #888888; }`,A=(t="")=>`
+    `},H=(t="")=>`${t} .card { box-shadow: 5px 5px 18px #888888; }`,B=(t="")=>`
         ${t} .card { border: 0; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); transition: all 0.7s ;}
         ${t} .card:hover { animation-duration: 0.25s; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); }
     `,D=(t="",e=3)=>{let r=12/e;return`
@@ -122,7 +127,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-    `};var H=t=>`
+    `};var A=t=>`
         ${t} { overflow:hidden; }
         ${t} .section-background { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-animation: zoomin 18s ease-in infinite; animation: zoomin 18s ease-in infinite; transition: all 1.75s ease-in-out; overflow: hidden; }
         @-webkit-keyframes zoomin{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}@keyframes zoomin{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
@@ -142,7 +147,7 @@
     .ctaButton${t} > a:hover {
         transform: translateX(5px);
     }
-`;var E=(t=".full-width")=>`
+`;var T=(t=".full-width")=>`
     ${t} .content-width-container, ${t}.content-width-container, ${t}  {
         max-width: unset !important;
     }
@@ -160,16 +165,16 @@
     @media (min-width: ${t}) {
         ${e}
     }
-`;var k=t=>P(M,t),$=t=>P(Y,t);var j=`
+`;var k=t=>P(M,t),E=t=>P(Y,t);var j=`
     .header-container, .homepage-wrapper .header-container { background-color: var(--nav-bg-color); }
     .header-container, .homepage-wrapper .header-container { border-bottom: var(--nav-border); }
     .navbar-toggler-icon i { color: var(--nav-toggle-icon-color); }
     
-    .navbar-light .navbar-nav .nav-item.current .nav-link { color: var(--nav-link-color); border-bottom: 1px solid var(--nav-link-color);}
-    .navbar-light .navbar-nav .nav-link:hover { color: var(--nav-link-color); border-bottom: 1px solid var(--nav-link-color);}
+    .navbar-light .navbar-nav .nav-item.current .nav-link { color: var(--nav-link-color-current, var(--nav-link-color)); border-bottom: 1px solid var(--nav-link-color-current, var(--nav-link-color));}
+    .navbar-light .navbar-nav .nav-link:hover { color: var(--nav-link-color-hover, var(--nav-link-color)); border-bottom: 1px solid var(--nav-link-color-hover, var(--nav-link-color));}
     .navbar-light .navbar-nav .nav-link { color: var(--nav-link-color);}
 
-`,F=E(".navbar"),N=`
+`,N=T(".navbar"),F=`
     ${k(`
         .header-container, .homepage-wrapper .header-container {
             position: sticky !important;
@@ -185,11 +190,11 @@
     figure.sw-gallery-item {
         padding: 0;
     }
-`;var V=(t,e=globalThis.document)=>{let r=e.createElement("style"),o=globalThis.config||{},s=t.importedRules||[],i=t.styleRules||[],c=[],n=[];o?.font&&n.push(`--font-family: ${o.font};`),o?.navigation?.font&&n.push(`--nav-font-family: ${o.navigation.font};`),o?.navigation?.noBorder&&n.push("--nav-border: 0;"),o?.navigation?.fullWidth&&i.push(F),o?.navigation?.sticky&&i.push(N);let m=o?.navigation?.colors;m?.background&&n.push(`--nav-bg-color: ${m.background};`),m?.menuIcon&&n.push(`--nav-toggle-icon-color: ${m.menuIcon};`),m?.link&&n.push(`--nav-link-color: ${m.link};`),o?.buttons?.button1?.hover?.down&&i.push(C("")),o?.buttons?.button2?.hover?.down&&i.push(C("2")),o?.buttons?.button1?.hover?.right&&i.push(L("")),o?.buttons?.button2?.hover?.right&&i.push(L("2"));for(let[p,a]of[o?.buttons?.button1,o?.buttons?.button2,o?.form?.button,o?.form?.inputs].entries()){let u=p+1;a&&(a.border?.color&&n.push(`--button-${u}-border-color: ${a.border.color};`),a.border?.width&&n.push(`--button-${u}-border-width: ${a.border.width};`),a.border?.radius&&n.push(`--button-${u}-border-radius: ${a.border.radius};`),a.background&&n.push(`--button-${u}-bg-color: ${a.background};`),a.color&&n.push(`--button-${u}-color: ${a.color};`),a.hover?.background&&n.push(`--button-${u}-hover-bg-color: ${a.hover.background};`),a.hover?.color&&n.push(`--button-${u}-hover-color: ${a.hover.color};`),a.hover?.borderColor&&n.push(`--button-${u}-hover-border-color: ${a.hover.borderColor};`))}o?.link?.color&&n.push(`--link-color: ${o.link.color};`),o?.link?.decoration&&n.push(`--link-decoration: ${o.link.decoration};`),o?.footer?.bgColor&&n.push(`--footer-bg-color: ${o.footer.bgColor};`),o?.footer?.color&&n.push(`--footer-color: ${o.footer.color};`),o?.contactPagelet?.color&&n.push(`--contact-pagelet-color: ${o.contactPagelet.color};`),o?.form?.label?.color&&n.push(`--form-label-color: ${o.form.label.color};`),o?.form?.label?.fontSize&&n.push(`--form-label-font-size: ${o.form.label.fontSize};`),o?.form?.soften&&i.push(O),o?.form?.gdpr&&n.push(`--form-anchor-color: ${o.form.gdpr};`),o?.form?.button?.hover?.right&&i.push(z),o?.form?.button?.hover?.down&&i.push(I),o?.gallery?.noGap&&i.push(G);let T=(p,a)=>{if(a.shadow&&i.push(B(p)),a.hover&&i.push(A(p)),a.styles&&i.push(R(p,a.styles)),a.sameHeight?.length)for(let u of a.sameHeight)i.push(D(p,u))};if(o?.card&&T("",o.card),o?.cards)for(let[p,a]of Object.entries(o.cards))T(`.${p}`,a);if(o?.li?.content&&n.push(`--li-content: ${o.li.content};`),o?.li?.color&&n.push(`--li-color: ${o.li.color};`),o?.zoomImage)for(let p of o.zoomImage)H(p);for(let[p,a]of[o?.h1,o?.h2,o?.h3].entries())a&&(a.fontSize&&n.push(`--h${p}-font-size-mobile: ${a.fontSize};`),a.fontSizeTablet&&n.push(`--h${p}-font-size-tablet: ${a.fontSizeTablet};`),a.fontSizeDesktop&&n.push(`--h${p}-font-size-desktop: ${a.fontSizeDesktop};`),a.color&&n.push(`--h${p}-color: ${a.color};`));c.push(...s,`:root {
+`;var V=(t,e=globalThis.document)=>{let r=e.createElement("style"),o=globalThis.config||{},s=t.importedRules||[],i=t.styleRules||[],c=[],n=[];o?.font&&n.push(`--font-family: ${o.font};`),o?.navigation?.font&&n.push(`--nav-font-family: ${o.navigation.font};`),o?.navigation?.noBorder&&n.push("--nav-border: 0;"),o?.navigation?.fullWidth&&i.push(N),o?.navigation?.sticky&&i.push(F);let d=o?.navigation?.colors;d?.background&&n.push(`--nav-bg-color: ${d.background};`),d?.menuIcon&&n.push(`--nav-toggle-icon-color: ${d.menuIcon};`),d?.link&&n.push(`--nav-link-color: ${d.link};`),d?.linkCurrent&&n.push(`--nav-link-color-current: ${d.linkCurrent};`),d?.linkHover&&n.push(`--nav-link-color-hover: ${d.linkHover};`),o?.buttons?.button1?.hover?.down&&i.push(C("")),o?.buttons?.button2?.hover?.down&&i.push(C("2")),o?.buttons?.button1?.hover?.right&&i.push(L("")),o?.buttons?.button2?.hover?.right&&i.push(L("2"));for(let[p,a]of[o?.buttons?.button1,o?.buttons?.button2,o?.form?.button,o?.form?.inputs].entries()){let b=p+1;a&&(a.border?.color&&n.push(`--button-${b}-border-color: ${a.border.color};`),a.border?.width&&n.push(`--button-${b}-border-width: ${a.border.width};`),a.border?.radius&&n.push(`--button-${b}-border-radius: ${a.border.radius};`),a.background&&n.push(`--button-${b}-bg-color: ${a.background};`),a.color&&n.push(`--button-${b}-color: ${a.color};`),a.hover?.background&&n.push(`--button-${b}-hover-bg-color: ${a.hover.background};`),a.hover?.color&&n.push(`--button-${b}-hover-color: ${a.hover.color};`),a.hover?.borderColor&&n.push(`--button-${b}-hover-border-color: ${a.hover.borderColor};`))}o?.link?.color&&n.push(`--link-color: ${o.link.color};`),o?.link?.decoration&&n.push(`--link-decoration: ${o.link.decoration};`),o?.footer?.bgColor&&n.push(`--footer-bg-color: ${o.footer.bgColor};`),o?.footer?.color&&n.push(`--footer-color: ${o.footer.color};`),o?.contactPagelet?.color&&n.push(`--contact-pagelet-color: ${o.contactPagelet.color};`),o?.form?.label?.color&&n.push(`--form-label-color: ${o.form.label.color};`),o?.form?.label?.fontSize&&n.push(`--form-label-font-size: ${o.form.label.fontSize};`),o?.form?.soften&&i.push(O),o?.form?.gdpr&&n.push(`--form-anchor-color: ${o.form.gdpr};`),o?.form?.button?.hover?.right&&i.push(z),o?.form?.button?.hover?.down&&i.push(I),o?.gallery?.noGap&&i.push(G);let S=(p,a)=>{if(a.shadow&&i.push(H(p)),a.hover&&i.push(B(p)),a.styles&&i.push(R(p,a.styles)),a.sameHeight?.length)for(let b of a.sameHeight)i.push(D(p,b))};if(o?.card&&S("",o.card),o?.cards)for(let[p,a]of Object.entries(o.cards))S(`.${p}`,a);if(o?.li?.content&&n.push(`--li-content: ${o.li.content};`),o?.li?.color&&n.push(`--li-color: ${o.li.color};`),o?.zoomImage)for(let p of o.zoomImage)A(p);for(let[p,a]of[o?.h1,o?.h2,o?.h3].entries())a&&(a.fontSize&&n.push(`--h${p}-font-size-mobile: ${a.fontSize};`),a.fontSizeTablet&&n.push(`--h${p}-font-size-tablet: ${a.fontSizeTablet};`),a.fontSizeDesktop&&n.push(`--h${p}-font-size-desktop: ${a.fontSizeDesktop};`),a.color&&n.push(`--h${p}-color: ${a.color};`));c.push(...s,`:root {
         ${n.join(`
 `)}
     }`,...i),r.textContent=`${c.join(`
-`)}`,e.head.appendChild(r)};var f=t=>e=>{if(!t.template)throw new Error("You need to pass a template for the element");let r=document.createElement("template");t.style&&(t.template=`<style>${t.style}</style> ${t.template}`);let o=e.prototype.connectedCallback||function(){};e.prototype.connectedCallback=function(){r.innerHTML=t.template;let i=document.importNode(r.content,!0);t.shadow?this.attachShadow({mode:"open"}).appendChild(i):this.appendChild(i),this.componentWillMount&&this.componentWillMount(),o.call(this),this.componentDidMount&&this.componentDidMount()};let s=e.prototype.disconnectedCallback||function(){};e.prototype.disconnectedCallback=function(){this.componentWillUnmount&&this.componentWillUnmount(),s.call(this),this.componentDidUnmount&&this.componentDidUnmount()},e.prototype.attributeChangedCallback=function(i,c,n){let m=e._inputs[i];(Object.hasOwn(this,m)||Object.hasOwn(e.prototype,m))&&(this[m]=n)},window.customElements.define(t.selector,e)};function st(t){return t.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g,"$1-$2").toLowerCase()}var d=()=>(t,e)=>{t.constructor.observedAttributes||(t.constructor.observedAttributes=[]),t.constructor._inputs||(t.constructor._inputs={}),t.constructor._attributes||(t.constructor._attributes={});let r=st(e);t.constructor._inputs[r]=e,t.constructor._attributes[e]=r,t.constructor.observedAttributes.push(r);let o=t.connectedCallback||function(){};t.connectedCallback=function(){o.call(this);let s=Object.getOwnPropertyDescriptor(t,e),i={configurable:!0,enumerable:!0},c;i.set=function(n){c=n,c!==n&&this.setAttribute(t.constructor._attributes[e],n),s?.set&&s.set(n)},i.get=()=>s?.get?s.get():c,Object.defineProperty(this,e,i)}};var h=t=>(e,r)=>{let[o,s]=t.split(".");switch(o){case"style":let i,c=Object.getOwnPropertyDescriptor(e,r),n={configurable:!0,enumerable:!0};n.set=function(p){i=p,c?.set&&c.set(p)},n.get=()=>c?.get?c.get():i;let m=n.set,T=e.connectedCallback||function(){};e.connectedCallback=function(){T.call(this),this.style.setProperty(s,i),n.set=function(p){this.style.setProperty(s,i),m(p)}},Object.defineProperty(e,r,n);break;default:break}};var g=class extends HTMLElement{constructor(){super();this.height="auto";this.overlayColor=""}};l([h("style.height"),d()],g.prototype,"height",2),l([h("style.--overlay-color"),d()],g.prototype,"overlayColor",2),g=l([f({template:'<slot></slot><div class="overlay"></div>',style:`
+`)}`,e.head.appendChild(r)};var f=t=>e=>{if(!t.template)throw new Error("You need to pass a template for the element");let r=document.createElement("template");t.style&&(t.template=`<style>${t.style}</style> ${t.template}`);let o=e.prototype.connectedCallback||function(){};e.prototype.connectedCallback=function(){r.innerHTML=t.template;let i=document.importNode(r.content,!0);t.shadow?this.attachShadow({mode:"open"}).appendChild(i):this.appendChild(i),this.componentWillMount&&this.componentWillMount(),o.call(this),this.componentDidMount&&this.componentDidMount()};let s=e.prototype.disconnectedCallback||function(){};e.prototype.disconnectedCallback=function(){this.componentWillUnmount&&this.componentWillUnmount(),s.call(this),this.componentDidUnmount&&this.componentDidUnmount()},e.prototype.attributeChangedCallback=function(i,c,n){let d=e._inputs[i];(Object.hasOwn(this,d)||Object.hasOwn(e.prototype,d))&&(this[d]=n)},window.customElements.define(t.selector,e)};function lt(t){return t.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g,"$1-$2").toLowerCase()}var m=()=>(t,e)=>{t.constructor.observedAttributes||(t.constructor.observedAttributes=[]),t.constructor._inputs||(t.constructor._inputs={}),t.constructor._attributes||(t.constructor._attributes={});let r=lt(e);t.constructor._inputs[r]=e,t.constructor._attributes[e]=r,t.constructor.observedAttributes.push(r);let o=t.connectedCallback||function(){};t.connectedCallback=function(){o.call(this);let s=Object.getOwnPropertyDescriptor(t,e),i={configurable:!0,enumerable:!0},c;i.set=function(n){c=n,c!==n&&this.setAttribute(t.constructor._attributes[e],n),s?.set&&s.set(n)},i.get=()=>s?.get?s.get():c,Object.defineProperty(this,e,i)}};var h=t=>(e,r)=>{let[o,s]=t.split(".");switch(o){case"style":let i,c=Object.getOwnPropertyDescriptor(e,r),n={configurable:!0,enumerable:!0};n.set=function(p){i=p,c?.set&&c.set(p)},n.get=()=>c?.get?c.get():i;let d=n.set,S=e.connectedCallback||function(){};e.connectedCallback=function(){S.call(this),this.style.setProperty(s,i),n.set=function(p){this.style.setProperty(s,i),d(p)}},Object.defineProperty(e,r,n);break;default:break}};var g=class extends HTMLElement{constructor(){super();this.height="auto";this.overlayColor=""}};l([h("style.height"),m()],g.prototype,"height",2),l([h("style.--overlay-color"),m()],g.prototype,"overlayColor",2),g=l([f({template:'<slot></slot><div class="overlay"></div>',style:`
     :host {
         width: 100%;
         position: relative;
@@ -255,7 +260,7 @@
     .overlay {
         background-color: var(--overlay-color);
     }
-    `,shadow:!0,selector:"app-banner"})],g);var b=class extends HTMLElement{constructor(){super();this.width="var(--tablet)";this.height="100%";this.triangle="";this.color="white";this.degStyle="";this.angle=35}set angle(r){this.degStyle=`${Number(r)}deg`}componentDidMount(){this.parentElement&&!this.parentElement.style.position&&this.parentElement.style.setProperty("position","relative")}};l([h("style.--width"),d()],b.prototype,"width",2),l([h("style.--height"),d()],b.prototype,"height",2),l([h("style.--triangle"),d()],b.prototype,"triangle",2),l([h("style.--background"),d()],b.prototype,"color",2),l([h("style.--degree")],b.prototype,"degStyle",2),l([d()],b.prototype,"angle",1),b=l([f({template:'<div class="polygon"><div class="content"><slot></slot></div></div>',style:`
+    `,shadow:!0,selector:"app-banner"})],g);var u=class extends HTMLElement{constructor(){super();this.width="var(--tablet)";this.height="100%";this.triangle="";this.color="white";this.degStyle="";this.angle=35}set angle(r){this.degStyle=`${Number(r)}deg`}componentDidMount(){this.parentElement&&!this.parentElement.style.position&&this.parentElement.style.setProperty("position","relative")}};l([h("style.--width"),m()],u.prototype,"width",2),l([h("style.--height"),m()],u.prototype,"height",2),l([h("style.--triangle"),m()],u.prototype,"triangle",2),l([h("style.--background"),m()],u.prototype,"color",2),l([h("style.--degree")],u.prototype,"degStyle",2),l([m()],u.prototype,"angle",1),u=l([f({template:'<div class="polygon"><div class="content"><slot></slot></div></div>',style:`
     :host {
         --angle: var(--degree);
         --polygon-x-y-1: 0 0;
@@ -364,7 +369,7 @@
         justify-content: center;
         flex-direction: column;
     }
-    `,shadow:!0,selector:"app-stripe"})],b);var W=`
+    `,shadow:!0,selector:"app-stripe"})],u);var W=`
     :root {
         --default-font-family: 'Poppins';
         --tablet: 768px;
@@ -384,7 +389,7 @@
         }
     `)}
     
-    ${$(`
+    ${E(`
         :root {
             --padding: 48px;
             --padding-mobile: 16px;
@@ -431,7 +436,7 @@
         }
     `)}
     
-    ${$(`
+    ${E(`
          .wm-p-simple-text h1, h1 {
             font-size: var(--h1-font-size-desktop, var(--h1-font-size-default));
         }
@@ -587,12 +592,12 @@
         -ms-flex-pack: center;
         justify-content: center;
     }
-`;var S=`
+`;var it=`
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free.min.css");
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-shims.min.css");
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-font-face.min.css");
     @import url("https://ka-f.fontawesome.com/releases/v6.5.2/css/free-v4-font-face.min.css");
-`;var v=class extends HTMLElement{constructor(){super(...arguments);this.background="";this.radius=""}componentDidMount(){let r=this.shadowRoot?.querySelector(".hide");r&&(r.onclick=()=>{this.style.display="none"})}};l([h("style.--notification-bg-color"),d()],v.prototype,"background",2),l([h("style.--notification-border-radius"),d()],v.prototype,"radius",2),v=l([f({template:`
+`;var $=t=>{let e=document.head.querySelector('[href*="css/all.min.css"]');if(e)t.appendChild(e.cloneNode());else{let r=document.createElement("style");r.textContent=it,t.appendChild(r)}};var v=class extends HTMLElement{constructor(){super(...arguments);this.background="";this.radius=""}componentDidMount(){this.shadowRoot&&$(this.shadowRoot);let r=this.shadowRoot?.querySelector(".hide");r&&(r.onclick=()=>{this.style.display="none"})}};l([h("style.--notification-bg-color"),m()],v.prototype,"background",2),l([h("style.--notification-border-radius"),m()],v.prototype,"radius",2),v=l([f({template:`
         <div class="title">
             <slot name="title"></slot>
         </div>
@@ -603,7 +608,6 @@
             <slot name="close"><i class="fa-solid fa-xmark"></i></slot>
         </button>
     `,shadow:!0,selector:"app-notification",style:`
-        ${S}
         :host {
             position: fixed;
             bottom: 0;
@@ -635,7 +639,7 @@
         :host([shadow]) {
             box-shadow: 0px 0px 8px rgba(0, 0, 0, .3);
         }
-    `})],v);var x=class extends HTMLElement{constructor(){super(...arguments);this.width="";this.overlayColor=""}};l([h("style.--card-width"),d()],x.prototype,"width",2),l([h("style.--card-overlay-color"),d()],x.prototype,"overlayColor",2),x=l([f({template:`
+    `})],v);var x=class extends HTMLElement{constructor(){super(...arguments);this.width="";this.overlayColor=""}};l([h("style.--card-width"),m()],x.prototype,"width",2),l([h("style.--card-overlay-color"),m()],x.prototype,"overlayColor",2),x=l([f({template:`
         <slot></slot>
         <div class="overlay">
             <slot name="overlay"></slot>
@@ -686,7 +690,7 @@
         ::slotted(img) {
             object-fit: cover;
         }
-    `})],x);var w=class extends HTMLElement{constructor(){super();this.delay=""}componentDidMount(){if(this.parentElement){let o=[...this.parentElement.querySelectorAll("app-animated-text")].indexOf(this);this.style.setProperty("--animate-delay",`${o}s`)}}};l([h("style.--animate-delay"),d()],w.prototype,"delay",2),w=l([f({template:"<slot></slot>",style:`
+    `})],x);var w=class extends HTMLElement{constructor(){super();this.delay=""}componentDidMount(){if(this.parentElement){let o=[...this.parentElement.querySelectorAll("app-animated-text")].indexOf(this);this.style.setProperty("--animate-delay",`${o}s`)}}};l([h("style.--animate-delay"),m()],w.prototype,"delay",2),w=l([f({template:"<slot></slot>",style:`
         :host {
             --animate-duration: 1s;
             --animate-delay: 0s;
@@ -723,7 +727,7 @@
                 opacity: 1
             }
         }
-    `,shadow:!0,selector:"app-animated-text"})],w);var y=class extends HTMLElement{constructor(){super(...arguments);this.intervalNum=5e3;this.slideIndex=0;this.slideItems=[]}set interval(r){this.intervalNum=Number(r),this.startSliding()}get slides(){return this.slideContainer?[...this.slideContainer.assignedElements()]:[]}componentDidMount(){this.slideContainer=this.shadowRoot?.querySelector(".slide-container slot"),this.intervalId||this.startSliding();let r=this.shadowRoot?.querySelector(".left button"),o=this.shadowRoot?.querySelector(".right button");r&&(r.onclick=()=>this.setNextSlide(-1,!0)),o&&(o.onclick=()=>this.setNextSlide(1,!0));let s=this.shadowRoot?.querySelector(".items");s&&this.slideContainer&&this.slideContainer.addEventListener("slotchange",i=>{this.slideItems=[],s.innerHTML="";for(let[c,n]of this.slides.entries()){let m=document.createElement("button");m.classList.add("item"),m.onclick=()=>this.setSlide(c,!0),s.appendChild(m),this.slideItems.push(m)}this.setSlide(0)})}componentDidUnmount(){this.stopSliding()}startSliding(){this.stopSliding(),this.slideContainer&&(this.intervalId=setInterval(()=>{this.setNextSlide()},this.intervalNum))}stopSliding(){clearInterval(this.intervalId)}setSlide(r,o=!1){this.slideItems.forEach(s=>s.classList.remove("active")),this.slideItems[r].classList.add("active"),this.style.setProperty("--carousel-slide",`${r*-100}%`),o&&this.startSliding()}setNextSlide(r=1,o=!1){let i=this.slides.length-1,c=this.slideIndex+r;this.slideIndex=c>i?0:c<0?i:c,this.setSlide(this.slideIndex,o)}};l([d()],y.prototype,"interval",1),y=l([f({template:`
+    `,shadow:!0,selector:"app-animated-text"})],w);var y=class extends HTMLElement{constructor(){super(...arguments);this.intervalNum=5e3;this.slideIndex=0;this.slideItems=[]}set interval(r){this.intervalNum=Number(r),this.startSliding()}get slides(){return this.slideContainer?[...this.slideContainer.assignedElements()]:[]}componentDidMount(){this.shadowRoot&&$(this.shadowRoot),this.slideContainer=this.shadowRoot?.querySelector(".slide-container slot"),this.intervalId||this.startSliding();let r=this.shadowRoot?.querySelector(".left button"),o=this.shadowRoot?.querySelector(".right button");r&&(r.onclick=()=>this.setNextSlide(-1,!0)),o&&(o.onclick=()=>this.setNextSlide(1,!0));let s=this.shadowRoot?.querySelector(".items");s&&this.slideContainer&&this.slideContainer.addEventListener("slotchange",i=>{this.slideItems=[],s.innerHTML="";for(let[c,n]of this.slides.entries()){let d=document.createElement("button");d.classList.add("item"),d.onclick=()=>this.setSlide(c,!0),s.appendChild(d),this.slideItems.push(d)}this.setSlide(0)})}componentDidUnmount(){this.stopSliding()}startSliding(){this.stopSliding(),this.slideContainer&&(this.intervalId=setInterval(()=>{this.setNextSlide()},this.intervalNum))}stopSliding(){clearInterval(this.intervalId)}setSlide(r,o=!1){this.slideItems.forEach(s=>s.classList.remove("active")),this.slideItems[r].classList.add("active"),this.style.setProperty("--carousel-slide",`${r*-100}%`),o&&this.startSliding()}setNextSlide(r=1,o=!1){let i=this.slides.length-1,c=this.slideIndex+r;this.slideIndex=c>i?0:c<0?i:c,this.setSlide(this.slideIndex,o)}};l([m()],y.prototype,"interval",1),y=l([f({template:`
         <div class="slide-container">
             <slot></slot>
         </div>
@@ -743,7 +747,6 @@
             </div>
         </div>
     `,shadow:!0,selector:"app-carousel",style:`
-        ${S}
         :host {
            height: 100%;
            width: 100%;
@@ -775,6 +778,7 @@
             object-fit: cover;
             flex: 0 0 100%;
             max-width: 100%;
+            margin: 0 !important;
         }
         
         .overlay {
@@ -829,5 +833,5 @@
         :host(:not([controls])) .items, :host(:not([controls])) .arrow {
             display: none;
         }
-    `})],y);V({components:[g,b,v,x,w,y],importedRules:[S],styleRules:[W,E(),q,X,j,Z,K,J,Q,_,tt,ot,U,et,rt,nt]});})();
+    `})],y);V({components:[g,u,v,x,w,y],importedRules:[],styleRules:[W,T(),q,X,j,Z,K,J,Q,_,tt,ot,U,et,rt,nt]});})();
 //# sourceMappingURL=anicka.js.map

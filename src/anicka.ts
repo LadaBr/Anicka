@@ -18,7 +18,6 @@ import {BETTER_CARD_STYLES} from "./style-rules/better-card-styles";
 import {DOUBLE_COLOR_BG_STYLES} from "./style-rules/double-color-bg-styles";
 import {VERTICAL_CENTER_COLS_STYLES} from "./style-rules/vertical-center-cols-styles";
 import {Notification} from "./components/notification";
-import {FA_CSS} from "./style-rules/fa";
 import {Card} from "./components/card";
 import {AnimatedText} from "./components/animated-text";
 import {Carousel} from "./components/carousel";
@@ -33,7 +32,7 @@ bootstrap({
         Carousel,
     ],
     importedRules: [
-        FA_CSS
+        // FA_CSS
     ],
     styleRules: [
         VARIABLES,

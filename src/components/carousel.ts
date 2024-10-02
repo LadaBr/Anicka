@@ -1,7 +1,6 @@
 import {Component} from "../core/component.decorator";
-import {FA_CSS} from "../style-rules/fa";
-import {HostBinding} from "../core/host-binding.decorator";
 import {Input} from "../core/input.decorator";
+import {faInclude} from "../core/fa-include";
 
 @Component({
     template: `
@@ -27,7 +26,6 @@ import {Input} from "../core/input.decorator";
     shadow: true,
     selector: 'app-carousel',
     style: `
-        ${FA_CSS}
         :host {
            height: 100%;
            width: 100%;
@@ -59,6 +57,7 @@ import {Input} from "../core/input.decorator";
             object-fit: cover;
             flex: 0 0 100%;
             max-width: 100%;
+            margin: 0 !important;
         }
         
         .overlay {
@@ -134,6 +133,7 @@ export class Carousel extends HTMLElement {
     }
 
     componentDidMount(): void {
+        if (this.shadowRoot) faInclude(this.shadowRoot);
         this.slideContainer = this.shadowRoot?.querySelector('.slide-container slot');
         if (!this.intervalId) {
             this.startSliding();
@@ -192,7 +192,7 @@ export class Carousel extends HTMLElement {
     }
 
     setNextSlide(index: number = 1, resetInterval = false) {
-        const slides =  this.slides;
+        const slides = this.slides;
         const maxIndex = slides.length - 1;
         const newIndex = this.slideIndex + index;
         this.slideIndex = newIndex > maxIndex ? 0 : newIndex < 0 ? maxIndex : newIndex;

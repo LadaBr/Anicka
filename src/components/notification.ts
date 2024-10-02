@@ -1,7 +1,7 @@
 import {Component} from "../core/component.decorator";
-import {FA_CSS} from "../style-rules/fa";
 import {HostBinding} from "../core/host-binding.decorator";
 import {Input} from "../core/input.decorator";
+import {faInclude} from "../core/fa-include";
 
 @Component({
     template: `
@@ -18,7 +18,6 @@ import {Input} from "../core/input.decorator";
     shadow: true,
     selector: 'app-notification',
     style: `
-        ${FA_CSS}
         :host {
             position: fixed;
             bottom: 0;
@@ -57,6 +56,7 @@ export class Notification extends HTMLElement {
     @HostBinding('style.--notification-border-radius') @Input() radius: string = '';
 
     componentDidMount() {
+        if (this.shadowRoot) faInclude(this.shadowRoot);
         const button = this.shadowRoot?.querySelector<HTMLButtonElement>('.hide');
         if (button) {
             button.onclick = () => {

@@ -49,6 +49,8 @@ export interface AnickaConfig {
             background?: string;
             menuIcon?: string;
             link?: string;
+            linkCurrent?: string;
+            linkHover?: string;
         };
         font?: string;
         noBorder?: boolean;
@@ -135,6 +137,12 @@ export const bootstrap = (config: BootstrapConfig, document: Document = globalTh
     }
     if (configNavColors?.link) {
         configVariables.push(`--nav-link-color: ${configNavColors.link};`);
+    }
+    if (configNavColors?.linkCurrent) {
+        configVariables.push(`--nav-link-color-current: ${configNavColors.linkCurrent};`);
+    }
+    if (configNavColors?.linkHover) {
+        configVariables.push(`--nav-link-color-hover: ${configNavColors.linkHover};`);
     }
 
     if (anickaConfig?.buttons?.button1?.hover?.down) {

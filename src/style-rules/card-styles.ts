@@ -3,10 +3,12 @@ export interface CardStyles {
         background?: string;
         color?: string;
     };
+    radius?: string;
     button?: {
         background?: string;
         color?: string;
         border?: string;
+        radius?: string;
         hover?: {
             background?: string;
             color?: string;
@@ -18,32 +20,42 @@ export const cardStyles = (className: string = '', styles?: CardStyles) => {
     const variables: string[] = [];
 
     if (styles?.header?.background) {
-        variables.push(`--card-header-bg-color: ${styles?.header?.background}`);
+        variables.push(`--card-header-bg-color: ${styles?.header?.background};`);
+    }
+    if (styles?.radius) {
+        variables.push(`--card-border-radius: ${styles?.radius};`);
     }
     if (styles?.header?.color) {
-        variables.push(`--card-header-color: ${styles?.header?.color}`);
+        variables.push(`--card-header-color: ${styles?.header?.color};`);
     }
 
     if (styles?.button?.background) {
-        variables.push(`--card-button-bg-color: ${styles?.button?.background}`);
+        variables.push(`--card-button-bg-color: ${styles?.button?.background};`);
     }
     if (styles?.button?.border) {
-        variables.push(`--card-button-border-color: ${styles?.button?.border}`);
+        variables.push(`--card-button-border-color: ${styles?.button?.border};`);
     }
     if (styles?.button?.color) {
-        variables.push(`--card-button-color: ${styles?.button?.color}`);
+        variables.push(`--card-button-color: ${styles?.button?.color};`);
+    }
+    if (styles?.button?.radius) {
+        variables.push(`--card-button-radius: ${styles?.button?.radius};`);
     }
 
     if (styles?.button?.hover?.background) {
-        variables.push(`--card-button-hover-bg-color: ${styles?.button?.hover?.background}`);
+        variables.push(`--card-button-hover-bg-color: ${styles?.button?.hover?.background};`);
     }
     if (styles?.button?.hover?.color) {
-        variables.push(`--card-button-hover-color: ${styles?.button?.hover?.color}`);
+        variables.push(`--card-button-hover-color: ${styles?.button?.hover?.color};`);
     }
 
     return `
         ${className || ':root'} {
             ${variables.join('\n')}
+        }
+        
+        ${className} .card {
+            border-radius: var(--card-border-radius);
         }
         
         ${className} .card .card-header {
@@ -55,6 +67,7 @@ export const cardStyles = (className: string = '', styles?: CardStyles) => {
             background-color: var(--card-button-bg-color);
             border-color: var(--card-button-border-color);
             color: var(--card-button-color);
+            border-radius: var(--card-border-radius);
         }
         
         ${className} .card .btn.btn-primary:hover {

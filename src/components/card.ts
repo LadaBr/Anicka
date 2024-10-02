@@ -1,5 +1,4 @@
 import {Component} from "../core/component.decorator";
-import {FA_CSS} from "../style-rules/fa";
 import {HostBinding} from "../core/host-binding.decorator";
 import {Input} from "../core/input.decorator";
 
@@ -63,4 +62,5 @@ import {Input} from "../core/input.decorator";
 export class Card extends HTMLElement {
     @HostBinding('style.--card-width') @Input() width: string = '';
     @HostBinding('style.--card-overlay-color') @Input() overlayColor: string = '';
+
 }

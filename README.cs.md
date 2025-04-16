@@ -669,6 +669,7 @@ node encrypt.mjs --message="Tohle je tajná zpráva!" --password="admin 1234" --
 
 ### Příklad použítí v HTML
 ```html
+<script src="decrypt-browser.js"></script>
 <form id="login">
   <label>
     Username

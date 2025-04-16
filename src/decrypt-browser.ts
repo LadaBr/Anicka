@@ -51,6 +51,7 @@ export declare module globalThis {
     let decryptFileFromUrls: typeof decryptFileFromUrlsFn;
 }
 
+globalThis.decrypt = decryptFn;
 globalThis.decryptFile = decryptFileFn;
 globalThis.decryptFileFromUrl = decryptFileFromUrlFn;
 globalThis.decryptFilesFromUrls = decryptFilesFromUrlsFn;

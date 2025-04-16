@@ -1,13 +1,27 @@
 /**
  * @type {import('esbuild').BuildOptions}
  */
-export const config = {
-    entryPoints: ['src/anicka.ts'],
+export const configBrowser = {
+    entryPoints: ['src/anicka.ts', 'src/decrypt-browser.ts'],
     outdir: 'dist',
     minify: true,
     sourcemap: true,
-    // entryNames: '[dir]/[name].[hash].[ext]',
     platform: 'browser',
+    keepNames: false,
+    assetNames: '[name].[hash].[ext]',
+    bundle: true
+}
+
+/**
+ * @type {import('esbuild').BuildOptions}
+ */
+export const configNode = {
+    entryPoints: ['src/encrypt.ts', 'src/decrypt.ts'],
+    outdir: 'dist',
+    minify: true,
+    sourcemap: false,
+    format: "esm",
+    platform: 'node',
     keepNames: false,
     assetNames: '[name].[hash].[ext]',
     bundle: true

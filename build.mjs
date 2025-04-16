@@ -1,5 +1,8 @@
 import {build} from "esbuild";
-import {config} from "./esbuild.config.mjs";
+import {configNode, configBrowser} from "./esbuild.config.mjs";
 
 
-await build(config);
+await Promise.all([
+    await build(configBrowser),
+    await build(configNode),
+])

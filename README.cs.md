@@ -7,6 +7,7 @@
 - [Card](#card)
 - [Animated text](#animated-text)
 - [Carousel](#carousel)
+- [Crypto](#crypto)
 
 # Konfigurace
 ```html
@@ -633,3 +634,35 @@ interface Config {
   <img src="https://picsum.photos/700/650">
 </app-carousel>
 ```
+
+<a id="crypto"></a>
+### Crypto
+- **encrypt.mjs** - vygeneruje šifrovaný soubor s požadovaným heslem (např. "<username> <heslo>")
+```bash
+node encrypt.mjs --message="{ \""firstName\"": \""Ladislav\"", \""lastName\"": \""Brodecký\"" }" --password="admin2 5678" --file=true
+node encrypt.mjs --message="Tohle je tajná zpráva!" --password="admin 1234" --file=true
+node encrypt.mjs --message="Tohle je tajná zpráva!" --password="admin 1234" --file=soubor1.txt
+```
+- **decrypt.mjs** - záložní script, který dělá opak encrypt
+- **decrypt-browser.js** - je potřeba nahrát na web, aby šlo volat funkce:
+
+#### decryptFile(file: Blob, password: string)
+- vrací obsah souboru nebo chybu
+
+#### decryptFileFromUrl(url: string | URL, password: string)
+- vrací obsah souboru z URL nebo chybu
+
+#### decryptFilesFromUrls(urls: (string | URL)[], password: string)
+- vrací pole hodnot pro každou URL (může být obsah souboru nebo chyba)
+
+#### decryptAllFilesFromUrls(urls: (string | URL)[], password: string)
+- vrací pole hodnot pro každou URL (musí úspěšně dešifrovat každý soubor, jinak vrátí chybu)
+
+#### validatePasswordForUrls(urls: (string | URL)[], password: string)
+- vrací true, pokud dojde k dešifrování alespoň jednoho souboru z URL
+
+#### validatePassword(message: string, password: string)
+- vrací true, pokud dojde k dešifrování zprávy (první parametr)
+
+#### decryptFileFromUrls(urls: (string | URL)[], password: string)
+- vrací obsah prvního souboru z pole URL, který je úspěšně dešifrován

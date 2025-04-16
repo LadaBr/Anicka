@@ -18,6 +18,7 @@ export const configBrowser = {
 export const configNode = {
     entryPoints: ['src/encrypt.ts', 'src/decrypt.ts'],
     outdir: 'dist',
+    outExtension: { '.js': '.mjs' },
     minify: true,
     sourcemap: false,
     format: "esm",

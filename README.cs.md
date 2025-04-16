@@ -666,3 +666,50 @@ node encrypt.mjs --message="Tohle je tajná zpráva!" --password="admin 1234" --
 
 #### decryptFileFromUrls(urls: (string | URL)[], password: string)
 - vrací obsah prvního souboru z pole URL, který je úspěšně dešifrován
+
+### Příklad použítí v HTML
+```html
+<form id="login">
+  <label>
+    Username
+    <input type="text" name="username"/>
+  </label>
+  <label>
+    Password
+    <input type="password" name="password"/>
+  </label>
+  <button>Login</button>
+</form>
+<script>
+  const urls = [
+      "users/9e72a485-2cf9-4099-8d24-1a75e5f0fe16",
+      "users/0260c8ea-954e-43d3-a51a-798994be30b2",
+      "https://lorem.ipsum.cz/users/user1.json",
+      "https://lorem.ipsum.cz/users/admin.txt"
+  ];
+
+  const form = document.querySelector('#login');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+    const password = `${value.username} ${value.password}`;
+
+    // variant 1
+    const isLoginValid = await validatePasswordForUrls(urls, password);
+    console.log("Variant 1", password, isLoginValid);
+
+    // variant 2
+    const userData = await decryptFileFromUrls(urls, password);
+    if (userData) {
+      console.log("Variant 2", password, JSON.parse(userData));
+    }
+
+    if (isLoginValid) {
+      console.log("Přihlášení úspěšné!");
+    } else {
+      alert("Nesprávné přihlašovací údaje!");
+    }
+  });
+</script>
+```
